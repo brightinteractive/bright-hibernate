@@ -24,10 +24,30 @@
 
     <dependencies>
         <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>${hibernate.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.10</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+    <properties>
+		<!--
+			hibernate-core 4.0.1 does not contain org.hibernate.connection.ConnectionProvider, which is used by org.springframework.orm.hibernate3.SessionFactoryUtils from spring-orm 3.1.0.RELEASE
+        <hibernate.version>4.0.1.Final</hibernate.version>
+		-->
+        <hibernate.version>3.6.9.Final</hibernate.version>
+        <spring.version>3.1.0.RELEASE</spring.version>
+	</properties>
 </project>
