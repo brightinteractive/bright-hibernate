@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <artifactId>bright-parent</artifactId>
+        <groupId>com.brightinteractive</groupId>
+        <version>1.0.0</version>
+    </parent>
+
+    <groupId>bright-hibernate</groupId>
+    <artifactId>bright-hibernate</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+
+    <name>Bright Interactive Common Hibernate Code</name>
+    <description>Bright Interactive common hibernate code</description>
+    <inceptionYear>2012</inceptionYear>
+
+    <scm>
+        <connection>scm:git:ssh://git@github.com/brightinteractive/bright-hibernate.git</connection>
+    </scm>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.10</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>
