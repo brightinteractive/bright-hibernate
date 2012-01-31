@@ -67,7 +67,7 @@ public abstract class GenericHibernateDao<T, ID extends Serializable>
     @SuppressWarnings("unchecked")
     public T findByIdAndLock(ID id)
     {
-        return (T) getSession().load(getPersistentClass(), id, LockMode.UPGRADE);
+        return (T) getSession().load(getPersistentClass(), id, LockOptions.UPGRADE);
     }
 
     @SuppressWarnings("unchecked")

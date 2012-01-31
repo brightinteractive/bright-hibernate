@@ -7,7 +7,7 @@ package com.brightinteractive.common.hibernate;
 import java.sql.Connection;
 
 import org.hibernate.Interceptor;
-import org.hibernate.LockMode;
+import org.hibernate.LockOptions;
 import org.hibernate.SessionFactory;
 import org.hibernate.classic.Session;
 
@@ -68,6 +68,6 @@ public class GenericHibernateDaoTest
         @SuppressWarnings("UnusedDeclaration")
         Widget widget = daoToTest.findByIdAndLock(42L);
 
-        verify(mockSession).load(Widget.class, 42L, LockMode.UPGRADE);
+        verify(mockSession).load(Widget.class, 42L, LockOptions.UPGRADE);
     }
 }
