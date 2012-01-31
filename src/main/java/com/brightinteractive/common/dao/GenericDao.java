@@ -19,7 +19,9 @@ import java.util.List;
  */
 public interface GenericDao<T, ID extends Serializable> {
 
-    T findById(ID id, boolean lock);
+    T findById(ID id);
+
+    public T findByIdAndLock(ID id);
 
     List<T> findAll();
 
