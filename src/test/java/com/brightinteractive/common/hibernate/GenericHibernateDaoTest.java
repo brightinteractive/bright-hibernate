@@ -57,7 +57,7 @@ public class GenericHibernateDaoTest
     public void testFindByIdCallsSessionLoad()
     {
         @SuppressWarnings("UnusedDeclaration")
-        Widget widget = daoToTest.findById(42L, false);
+        Widget widget = daoToTest.findById(42L);
 
         verify(mockSession).load(Widget.class, 42L);
     }
@@ -66,7 +66,7 @@ public class GenericHibernateDaoTest
     public void testFindByAndLockIdCallsSessionLoadWithLockArgument()
     {
         @SuppressWarnings("UnusedDeclaration")
-        Widget widget = daoToTest.findById(42L, true);
+        Widget widget = daoToTest.findByIdAndLock(42L);
 
         verify(mockSession).load(Widget.class, 42L, LockMode.UPGRADE);
     }
