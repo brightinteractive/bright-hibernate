@@ -6,9 +6,12 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
-import org.springframework.orm.hibernate3.SessionFactoryUtils;
+import org.springframework.orm.hibernate4.SessionFactoryUtils;
 
-import org.hibernate.*;
+import org.hibernate.Criteria;
+import org.hibernate.LockOptions;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Criterion;
 import org.hibernate.criterion.Example;
 
@@ -40,7 +43,10 @@ public abstract class GenericHibernateDao<T, ID extends Serializable>
 
     protected Session getSession()
     {
-        return SessionFactoryUtils.getSession(sessionFactory, true);
+        // FJDTODO not sure that we should be calling openSession() here - the Hibernate 3 version of this code called
+        // getSession() instead. Maybe we need to do something else to get the session that is bound to the thread, to
+        // avoid opening lots of sessions? Need to read the docs...
+        return SessionFactoryUtils.openSession(sessionFactory);
     }
 
     public SessionFactory getSessionFactory()

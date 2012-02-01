@@ -4,17 +4,13 @@
 
 package com.brightinteractive.common.hibernate;
 
-import java.sql.Connection;
-
-import org.hibernate.Interceptor;
 import org.hibernate.LockOptions;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.classic.Session;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.*;
 
 /**
@@ -47,9 +43,6 @@ public class GenericHibernateDaoTest
     {
         SessionFactory sessionFactory = mock(SessionFactory.class);
         when(sessionFactory.openSession()).thenReturn(session);
-        when(sessionFactory.openSession(any(Interceptor.class))).thenReturn(session);
-        when(sessionFactory.openSession(any(Connection.class))).thenReturn(session);
-        when(sessionFactory.openSession(any(Connection.class), any(Interceptor.class))).thenReturn(session);
         return sessionFactory;
     }
 
