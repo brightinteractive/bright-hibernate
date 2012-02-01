@@ -24,14 +24,17 @@
 
     <dependencies>
         <dependency>
+            <groupId>com.brightinteractive</groupId>
+            <artifactId>bright-common</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
             <!--
-                Note: I was going to use 4.0.1.Final, but hibernate-core
-                4.0.1 does not contain
-                org.hibernate.connection.ConnectionProvider, which is used by
-                org.springframework.orm.hibernate3.SessionFactoryUtils from
-                spring-orm 3.1.0.RELEASE
+                Note: I was going to use 4.0.1.Final, but it would require code changes in GenericHibernateDao that I
+                don't have time to research at the moment.
             -->
             <version>3.6.9.Final</version>
         </dependency>
