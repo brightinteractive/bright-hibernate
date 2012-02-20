@@ -15,7 +15,7 @@ Installation
 
 To clone the repo:
 
-    git clone git@github.com:brightinteractive/bright-common.git
+    git clone git@github.com:brightinteractive/bright-hibernate.git
 
 To run the project: because this project is a library it cannot be run independently.
 
