@@ -64,6 +64,12 @@ public abstract class GenericHibernateDao<T, ID extends Serializable>
         return (T) getSession().load(getPersistentClass(), id);
     }
 
+	@SuppressWarnings("unchecked")
+	public boolean exists(ID id)
+	{
+		return getSession().load(getPersistentClass(), id) != null;
+	}
+
     @SuppressWarnings("unchecked")
     public T findByIdAndLock(ID id)
     {
