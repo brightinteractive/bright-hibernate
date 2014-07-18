@@ -10,7 +10,7 @@
 
     <groupId>com.brightinteractive</groupId>
     <artifactId>bright-hibernate</artifactId>
-    <version>1.1.0-SNAPSHOT</version>
+    <version>1.1.0</version>
 
     <name>Bright Interactive Common Hibernate Code</name>
     <description>Bright Interactive common hibernate code</description>
